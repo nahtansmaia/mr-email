@@ -55,4 +55,8 @@ public class EmailService {
         return emailRepository.findByEmailFrom(emailFrom);
     }
 
+    public List<EmailModel> findByEmailTo(@PathVariable(value = "emailTo") String emailTo) {
+        return emailRepository.findByEmailTo(emailTo);
+    }
+
 }

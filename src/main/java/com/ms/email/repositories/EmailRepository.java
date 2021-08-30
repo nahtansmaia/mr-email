@@ -9,4 +9,7 @@ import java.util.UUID;
 public interface EmailRepository extends JpaRepository<EmailModel, UUID> {
 
     List<EmailModel> findByEmailFrom(String emailFrom);
+
+    List<EmailModel> findByEmailTo(String emailTo);
+
 }

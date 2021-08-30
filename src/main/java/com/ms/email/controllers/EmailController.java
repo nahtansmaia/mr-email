@@ -41,4 +41,9 @@ public class EmailController {
         return new ResponseEntity<>(emailService.findByEmailFrom(emailFrom), HttpStatus.OK);
     }
 
+    @GetMapping("/list-email/to/{emailTo}")
+    public ResponseEntity<List<EmailModel>> findByEmailTo(@PathVariable(value = "emailTo") String emailTo) {
+        return new ResponseEntity<>(emailService.findByEmailTo(emailTo), HttpStatus.OK);
+    }
+
 }

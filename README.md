@@ -83,3 +83,10 @@ O que irá encontrar neste microsserviço:
 ## Licença
 
 O código neste projeto está licenciado sob a licença MIT.
+
+<br />
+<br />
+<br />
+<br />
+
+[Retornar ao topo](https://github.com/nahtansmaia/ms-email#ms-email)

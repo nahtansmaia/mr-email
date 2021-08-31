@@ -27,7 +27,7 @@ public class EmailService {
     public EmailModel sendEmail(EmailModel emailModel) {
         emailModel.setSendDateEmail(LocalDateTime.now());
 
-        try{
+        try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(emailModel.getEmailFrom());
             message.setTo(emailModel.getEmailTo());
@@ -36,7 +36,7 @@ public class EmailService {
             emailSender.send(message);
 
             emailModel.setStatusEmail(EStatusEmail.SENT);
-        } catch (MailException e){
+        } catch (MailException e) {
             emailModel.setStatusEmail(EStatusEmail.ERROR);
         } finally {
             return emailRepository.save(emailModel);

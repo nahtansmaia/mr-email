@@ -1,8 +1,17 @@
 # MS-Email
-> Microsserviço desenvolvido para envio de e-mail.
+> *Microsserviço desenvolvido para envio de e-mail.*
 
 Para o desenvolvimento deste, foi utilizado a linguagem Java, com o framework Spring. Também foi utilizado o PostgreSQL 
 como banco de dados para que fosse armazenado os e-mails enviados para consultas futuras.
+
+## Sumário
+- [Instalando](https://github.com/nahtansmaia/ms-email#instalando)
+- [Clonando o repositório](https://github.com/nahtansmaia/ms-email#clonando-o-reposit%C3%B3rio)
+- [Funcionalidades](https://github.com/nahtansmaia/ms-email#funcionalidades)
+    - [Estrutura de JSON para envio](https://github.com/nahtansmaia/ms-email#estrutura-de-json-para-envio)
+    - [Estrutura do response](https://github.com/nahtansmaia/ms-email#estrutura-do-response)
+- [Links](https://github.com/nahtansmaia/ms-email#links)
+- [Licença](https://github.com/nahtansmaia/ms-email#licen%C3%A7a)
 
 ## Instalando
 
@@ -26,8 +35,9 @@ A execução será realizada na porta 3000 se utilizado o application.properties
 ## Funcionalidades
 
 O que irá encontrar neste microsserviço:
-* Envio de e-mail através de requisições POST.
-* Banco de dados com todos os e-mails para consultas.
+- Envio de e-mail através de requisições POST;
+- Localização de e-mails enviados através do *ID*, *emailFrom* ou *emailTo* através de requisições GET;
+- Banco de dados com todos os e-mails para consultas;
 
 #### Estrutura de JSON para envio
 ```json
@@ -39,11 +49,11 @@ O que irá encontrar neste microsserviço:
     "text": "String"
 }
 ```
-- ownerRef: Owner para gerenciamento de fila.
-- emailFrom: Quem enviará o e-mail.
-- emailTo: Quem receberá o e-mail.
-- subject: Assunto do e-mail.
-- text: Corpo do e-mail.
+- **ownerRef:** Owner para gerenciamento de fila.
+- **emailFrom:** Quem enviará o e-mail.
+- **emailTo:** Quem receberá o e-mail.
+- **subject:** Assunto do e-mail.
+- **text:** Corpo do e-mail.
 
 #### Estrutura do response.
 ```json
@@ -58,18 +68,18 @@ O que irá encontrar neste microsserviço:
   "statusEmail": "ENUM"
 }
 ```
-> Diferente do request, o response retornará alguns campos adicionais, tais como:
-- emailId: Id utilizado no banco de dados.
-- sendDateEmail: Data e hora de envio do e-mail.
-- statusEmail: Enum com os tipos *SENT* ou *ERROR*, indicando o status da requisição.
+> *Diferente do request, o response retornará alguns campos adicionais, tais como:*
+- **emailId:** Id utilizado no banco de dados.
+- **sendDateEmail:** Data e hora de envio do e-mail.
+- **statusEmail:** Enum com os tipos *SENT* ou *ERROR*, indicando o status da requisição.
 
 ## Links
 
-- Spring: https://spring.io/projects/spring-boot
 - Repositório: https://github.com/nahtansmaia/ms-email
+- Spring: https://spring.io/projects/spring-boot
 - PostgreSQL: https://www.postgresql.org/
 - RabbitMQ: https://www.rabbitmq.com/
 
 ## Licença
 
-"O código neste projeto está licenciado sob a licença MIT."
+O código neste projeto está licenciado sob a licença MIT.

@@ -10,8 +10,9 @@ como banco de dados para que fosse armazenado os e-mails enviados para consultas
 - [Instalando](https://github.com/nahtansmaia/ms-email#instalando)
 - [Clonando o repositório](https://github.com/nahtansmaia/ms-email#clonando-o-reposit%C3%B3rio)
 - [Funcionalidades](https://github.com/nahtansmaia/ms-email#funcionalidades)
-    - [Estrutura de JSON para envio](https://github.com/nahtansmaia/ms-email#estrutura-de-json-para-envio)
-    - [Estrutura do response](https://github.com/nahtansmaia/ms-email#estrutura-do-response)
+- [Requests](https://github.com/nahtansmaia/ms-email#requests)
+    - [Estrutura do JSON SMTP.](https://github.com/nahtansmaia/ms-email#estrutura-de-json-para-envio-de-smtp)
+    - [Estrutura do JSON e-mail](https://github.com/nahtansmaia/ms-email#estrutura-de-json-para-envio-de-e-mail)
 - [Links](https://github.com/nahtansmaia/ms-email#links)
 - [Licença](https://github.com/nahtansmaia/ms-email#licen%C3%A7a)
 

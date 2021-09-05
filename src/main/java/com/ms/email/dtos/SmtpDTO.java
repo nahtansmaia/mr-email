@@ -1,57 +1,33 @@
 package com.ms.email.dtos;
 
 import com.ms.email.models.SmtpModel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-
-import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Properties;
 
 @Data
-@Entity
-@Getter
-@Setter
+@AllArgsConstructor
+@Builder
 public class SmtpDTO {
 
-    @NotBlank
+    @NotBlank(message = "Host cannot be empty")
     private String host;
 
-    @NotNull
+    @NotNull(message = "Port cannot be empty")
     private Integer port;
 
-    @NotBlank
+    @NotBlank(message = "E-mail cannot be empty")
     private String username;
 
-    @NotBlank
+    @NotBlank(message = "Password cannot be empty")
     private String password;
 
+    @NotNull(message = "Auth is a boolean method and cannot be null")
     private Boolean auth = true;
+
+    @NotNull(message = "TLS is a boolean method and cannot be null")
     private Boolean tls = true;
 
-    public static JavaMailSenderImpl parse(SmtpModel smtpModel) {
-
-        if (smtpModel == null) {
-            throw new RuntimeException("SMTP not found.");
-        }
-
-        JavaMailSenderImpl sender = new JavaMailSenderImpl();
-        sender.setHost(smtpModel.getHost());
-        sender.setUsername(smtpModel.getUsername());
-        sender.setPassword(smtpModel.getPassword());
-        sender.setPort(smtpModel.getPort() != null ? smtpModel.getPort() : 587);
-        sender.setDefaultEncoding("UTF-8");
-
-        Properties props = new Properties();
-        props.setProperty("mail.smtp.auth", smtpModel.getAuth().toString());
-        props.setProperty("mail.smtp.starttls.enable", smtpModel.getTls().toString());
-        props.setProperty("mail.smtp.starttls.required", smtpModel.getTls().toString());
-        props.put("mail.smtp.timeout", 25000);
-        sender.setJavaMailProperties(props);
-
-        return sender;
-    }
 }

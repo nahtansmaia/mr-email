@@ -18,7 +18,7 @@ como banco de dados para que fosse armazenado os e-mails enviados para consultas
 Após o clone deste, é necessário criar o application.properties com as informações do seu banco de dados, smtp e RabbitMQ.
 Para melhor entendimento, segue neste um exemplo da estrutura utilizada. 
 [Clicando aqui](https://github.com/nahtansmaia/ms-email/blob/master/src/main/resources/application-example.properties)
-é possível consulta-lo. Após a configuração do mesmo, utilizar o comando abaixo para que seja criado o pacote com as 
+é possível consulta-lo. Após a configuração do mesmo, utilizar o comando abaixo para ser criado o pacote com as 
 dependências necessárias.
 
 ## Clonando o repositório

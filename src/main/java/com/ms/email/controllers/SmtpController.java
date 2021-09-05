@@ -1,6 +1,7 @@
 package com.ms.email.controllers;
 
 import com.ms.email.dtos.SmtpDTO;
+import com.ms.email.dtos.SmtpResponseDTO;
 import com.ms.email.models.SmtpModel;
 import com.ms.email.services.SmtpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,9 @@ public class SmtpController {
     SmtpService smtpService;
 
     @PostMapping("/smtp")
-    public ResponseEntity<SmtpModel> sendingEmail(@RequestBody @Valid SmtpDTO smtpDTO) {
-        SmtpModel smtpModel = new SmtpModel();
-        SmtpModel.parser(smtpModel, smtpDTO);
-        smtpService.saveSMTP(smtpModel);
-        return new ResponseEntity<>(smtpModel, HttpStatus.CREATED);
+    public ResponseEntity<SmtpResponseDTO> sendingEmail(@RequestBody @Valid SmtpDTO smtpDTO) {
+        SmtpModel smtpModel =  smtpService.saveSMTP(SmtpModel.parser(smtpDTO));
+        return new ResponseEntity<>(SmtpResponseDTO.parser(smtpModel), HttpStatus.CREATED);
     }
 
     @GetMapping("/smtp")

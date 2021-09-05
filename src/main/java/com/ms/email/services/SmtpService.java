@@ -1,6 +1,6 @@
 package com.ms.email.services;
 
-import com.ms.email.exception.BadRequestException;
+import com.ms.email.exception.SmtpNotFoundException;
 import com.ms.email.models.SmtpModel;
 import com.ms.email.repositories.SmtpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class SmtpService {
     }
 
     public SmtpModel findById(@PathVariable(value = "id") UUID id) {
-        return smtpRepository.findById(id).orElseThrow(() -> new BadRequestException("SMTP not found"));
+        return smtpRepository.findById(id).orElseThrow(() -> new SmtpNotFoundException("SMTP not found"));
     }
 
 }

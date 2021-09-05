@@ -1,4 +1,6 @@
 # MS-Email
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/nahtansmaia/ms-email/blob/master/README.en.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/nahtansmaia/ms-email/blob/master/README.md)
 
 > *Microsserviço desenvolvido para envio de e-mail.*
 
@@ -145,8 +147,6 @@ O que irá encontrar neste microsserviço:
 | text          | Corpo do e-mail.                   |     String    |
 | SendDateEmail | Data e hora de envio do e-mail     | LocalDateTime |
 | statusEmail   | ERROR ou SENT                      |      ENUM     |
-
-> *Diferente do request, o response retornará alguns campos adicionais, tais como:*
 
 ---
 ## Links

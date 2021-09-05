@@ -16,9 +16,7 @@ public class EmailConsumer {
 
     @RabbitListener(queues = "${spring.rabbitmq.queue}")
     public void listen(@Payload EmailDTO emailDTO) {
-        EmailModel emailModel = new EmailModel();
-        EmailModel.parser(emailModel, emailDTO);
-        emailService.sendEmail(emailModel);
+        EmailModel emailModel = emailService.sendEmail(EmailModel.parser(emailDTO));
         System.out.println("E-mail Status: " + emailModel.getStatusEmail().toString());
     }
 }

@@ -16,7 +16,7 @@ public class SmtpConsumer {
 
     @RabbitListener(queues = "${spring.rabbitmq.queue}")
     public void listen(@Payload SmtpDTO smtpDTO) {
-        SmtpModel smtpModel = smtpService.saveSMTP(SmtpModel.parser(smtpDTO));
+        SmtpModel smtpModel = smtpService.saveSmtp(SmtpModel.parser(smtpDTO));
         System.out.println("SMTP host: " + smtpModel.getHost());
     }
 }

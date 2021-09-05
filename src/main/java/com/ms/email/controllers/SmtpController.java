@@ -20,18 +20,30 @@ public class SmtpController {
     SmtpService smtpService;
 
     @PostMapping("/smtp")
-    public ResponseEntity<SmtpResponseDTO> sendingEmail(@RequestBody @Valid SmtpDTO smtpDTO) {
-        SmtpModel smtpModel =  smtpService.saveSMTP(SmtpModel.parser(smtpDTO));
+    public ResponseEntity<SmtpResponseDTO> sendingSmtp(@RequestBody @Valid SmtpDTO smtpDTO) {
+        SmtpModel smtpModel =  smtpService.saveSmtp(SmtpModel.parser(smtpDTO));
         return new ResponseEntity<>(SmtpResponseDTO.parser(smtpModel), HttpStatus.CREATED);
     }
 
     @GetMapping("/smtp")
     public ResponseEntity<List<SmtpModel>> listAllSmtp() {
-        return new ResponseEntity<>(smtpService.listAllSMTP(), HttpStatus.OK);
+        return new ResponseEntity<>(smtpService.listAllSmtp(), HttpStatus.OK);
     }
 
     @GetMapping("/smtp/{id}")
     public ResponseEntity<SmtpModel> findById(@PathVariable(value = "id") UUID id) {
         return new ResponseEntity<>(smtpService.findById(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/smtp")
+    public ResponseEntity<SmtpResponseDTO> updateSmtp(@RequestBody @Valid SmtpDTO smtpDTO) {
+        SmtpModel smtpModel = smtpService.updateSmtp(SmtpModel.parser(smtpDTO));
+        return new ResponseEntity<>(SmtpResponseDTO.parser(smtpModel), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/smtp/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteSmtp(@PathVariable("id") UUID id) {
+        smtpService.deleteSmtp(id);
     }
 }

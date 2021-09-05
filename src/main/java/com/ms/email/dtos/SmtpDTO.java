@@ -1,16 +1,18 @@
 package com.ms.email.dtos;
 
-import com.ms.email.models.SmtpModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @Builder
 public class SmtpDTO {
+
+    private UUID id;
 
     @NotBlank(message = "Host cannot be empty")
     private String host;

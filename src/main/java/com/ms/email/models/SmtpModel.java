@@ -27,6 +27,7 @@ public class SmtpModel {
 
     public static SmtpModel parser(SmtpDTO smtpDTO) {
         return SmtpModel.builder()
+                .id(smtpDTO.getId())
                 .host(smtpDTO.getHost())
                 .port(smtpDTO.getPort())
                 .username(smtpDTO.getUsername())

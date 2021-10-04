@@ -49,7 +49,7 @@ public class EmailService {
                 message.setFrom(emailModel.getEmailFrom());
                 message.addTo(emailModel.getEmailTo());
                 message.setSubject(emailModel.getSubject());
-                message.setMsg(emailModel.getText());
+                message.addPart(emailModel.getText(), "text/html; charset=UTF-8");
 
                 EmailAttachment attachment = new EmailAttachment();
                 File file = new File(emailModel.getDirPart());

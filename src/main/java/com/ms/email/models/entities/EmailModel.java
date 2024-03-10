@@ -1,10 +1,10 @@
-package com.ms.email.models;
+package com.ms.email.models.entities;
 
-import com.ms.email.dtos.EmailDTO;
-import com.ms.email.enums.EStatusEmail;
+import com.ms.email.models.dtos.EmailDTO;
+import com.ms.email.models.constants.EStatusEmail;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;

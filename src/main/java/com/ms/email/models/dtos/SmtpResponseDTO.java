@@ -1,7 +1,7 @@
-package com.ms.email.dtos;
+package com.ms.email.models.dtos;
 
 
-import com.ms.email.models.SmtpModel;
+import com.ms.email.models.entities.SmtpModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

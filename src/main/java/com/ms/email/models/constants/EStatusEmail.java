@@ -1,4 +1,4 @@
-package com.ms.email.enums;
+package com.ms.email.models.constants;
 
 import lombok.AllArgsConstructor;
 

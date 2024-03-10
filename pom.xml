@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>3.2.3</version>
+		<relativePath/>
 	</parent>
 	<groupId>com.ms</groupId>
 	<artifactId>email</artifactId>
@@ -14,7 +14,7 @@
 	<name>ms-email</name>
 	<description>Microservice to send e-mail</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-email</artifactId>
-			<version>1.3.1</version>
+			<version>1.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>

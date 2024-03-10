@@ -4,7 +4,7 @@ import com.ms.email.dtos.EmailDTO;
 import com.ms.email.enums.EStatusEmail;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;

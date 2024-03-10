@@ -3,7 +3,7 @@ package com.ms.email.models;
 import com.ms.email.dtos.SmtpDTO;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.UUID;
 
 @Data

@@ -1,6 +1,6 @@
-package com.ms.email.models;
+package com.ms.email.models.entities;
 
-import com.ms.email.dtos.SmtpDTO;
+import com.ms.email.models.dtos.SmtpDTO;
 import lombok.*;
 
 import jakarta.persistence.*;

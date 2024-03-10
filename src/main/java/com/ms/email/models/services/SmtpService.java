@@ -1,9 +1,8 @@
-package com.ms.email.services;
+package com.ms.email.models.services;
 
 import com.ms.email.exception.SmtpNotFoundException;
-import com.ms.email.models.EmailModel;
-import com.ms.email.models.SmtpModel;
-import com.ms.email.repositories.SmtpRepository;
+import com.ms.email.models.entities.SmtpModel;
+import com.ms.email.models.repositories.SmtpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

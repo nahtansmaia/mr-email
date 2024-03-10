@@ -1,8 +1,8 @@
 package com.ms.email.controllers;
 
-import com.ms.email.dtos.EmailDTO;
-import com.ms.email.models.EmailModel;
-import com.ms.email.services.EmailService;
+import com.ms.email.models.dtos.EmailDTO;
+import com.ms.email.models.entities.EmailModel;
+import com.ms.email.models.services.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

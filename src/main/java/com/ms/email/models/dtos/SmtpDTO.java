@@ -1,4 +1,4 @@
-package com.ms.email.dtos;
+package com.ms.email.models.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

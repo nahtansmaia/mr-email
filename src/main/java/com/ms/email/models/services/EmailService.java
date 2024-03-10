@@ -1,12 +1,12 @@
-package com.ms.email.services;
+package com.ms.email.models.services;
 
-import com.ms.email.enums.EStatusEmail;
+import com.ms.email.models.constants.EStatusEmail;
 import com.ms.email.exception.BadRequestException;
 import com.ms.email.exception.SmtpNotFoundException;
-import com.ms.email.models.EmailModel;
-import com.ms.email.models.SmtpModel;
-import com.ms.email.repositories.EmailRepository;
-import com.ms.email.repositories.SmtpRepository;
+import com.ms.email.models.entities.EmailModel;
+import com.ms.email.models.entities.SmtpModel;
+import com.ms.email.models.repositories.EmailRepository;
+import com.ms.email.models.repositories.SmtpRepository;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.MultiPartEmail;

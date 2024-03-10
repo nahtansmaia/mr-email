@@ -1,6 +1,6 @@
-package com.ms.email.dtos;
+package com.ms.email.models.dtos;
 
-import com.ms.email.enums.EStatusEmail;
+import com.ms.email.models.constants.EStatusEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

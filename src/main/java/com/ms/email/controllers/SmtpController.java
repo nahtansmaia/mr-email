@@ -1,47 +1,48 @@
 package com.ms.email.controllers;
 
-import com.ms.email.dtos.SmtpDTO;
-import com.ms.email.dtos.SmtpResponseDTO;
-import com.ms.email.models.SmtpModel;
-import com.ms.email.services.SmtpService;
+import com.ms.email.models.dtos.SmtpDTO;
+import com.ms.email.models.dtos.SmtpResponseDTO;
+import com.ms.email.models.entities.SmtpModel;
+import com.ms.email.models.services.SmtpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
 @RestController
+@RequestMapping(name = "/smtp")
 public class SmtpController {
 
     @Autowired
     SmtpService smtpService;
 
-    @PostMapping("/smtp")
+    @PostMapping
     public ResponseEntity<SmtpResponseDTO> sendingSmtp(@RequestBody @Valid SmtpDTO smtpDTO) {
         SmtpModel smtpModel =  smtpService.saveSmtp(SmtpModel.parser(smtpDTO));
         return new ResponseEntity<>(SmtpResponseDTO.parser(smtpModel), HttpStatus.CREATED);
     }
 
-    @GetMapping("/smtp")
+    @GetMapping
     public ResponseEntity<List<SmtpModel>> listAllSmtp() {
         return new ResponseEntity<>(smtpService.listAllSmtp(), HttpStatus.OK);
     }
 
-    @GetMapping("/smtp/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<SmtpModel> findById(@PathVariable(value = "id") UUID id) {
         return new ResponseEntity<>(smtpService.findById(id), HttpStatus.OK);
     }
 
-    @PutMapping("/smtp")
+    @PutMapping
     public ResponseEntity<SmtpResponseDTO> updateSmtp(@RequestBody @Valid SmtpDTO smtpDTO) {
         SmtpModel smtpModel = smtpService.updateSmtp(SmtpModel.parser(smtpDTO));
         return new ResponseEntity<>(SmtpResponseDTO.parser(smtpModel), HttpStatus.OK);
     }
 
-    @DeleteMapping("/smtp/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteSmtp(@PathVariable("id") UUID id) {
         smtpService.deleteSmtp(id);
